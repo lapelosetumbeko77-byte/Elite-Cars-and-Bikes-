@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Share your feedback with Elite Cars & Bikes in Botswana">
+  <title>Feedback - Elite Cars & Bikes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <i class="fas fa-car"></i>
+      <div class="logo-text">
+        <h1>ELITE</h1>
+        <p>CARS & BIKES</p>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="shop.html" class="nav-link">Shop</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="blog.html" class="nav-link">Blog</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+      <i class="fas fa-bars mobile-menu" id="mobileMenu"></i>
+    </div>
+  </div>
+</nav>
+
+  <section class="section" style="background:#18181b; padding-top:140px; text-align:center;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 2rem;">
+      <h1 class="section-title">Your Feedback Matters</h1>
+      <p style="font-size:1.25rem; color:var(--light-gray); max-width:700px; margin:0 auto;">
+        Help us improve. Tell us about your experience with Elite Cars & Bikes.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div style="max-width:800px; margin:0 auto; padding:0 2rem;">
+      <div class="card">
+        <div class="card-body" style="padding:2.5rem;">
+          <form id="feedbackForm" onsubmit="event.preventDefault(); alert('Thank you for your feedback! We appreciate your input.'); this.reset();">
+            
+            <div style="margin-bottom:1.5rem;">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" required placeholder="Enter your full name">
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" required placeholder="you@example.com">
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="+267 71 234 567">
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+              <label for="service">Service Rated *</label>
+              <select id="service" required>
+                <option value="">Select a service</option>
+                <option value="car-sales">Car Sales</option>
+                <option value="bike-sales">Motorcycle Sales</option>
+                <option value="servicing">Vehicle Servicing</option>
+                <option value="imports">Import Service</option>
+                <option value="website">Website Experience</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+              <label>Overall Rating *</label>
+              <div style="display:flex; gap:1.5rem; margin-top:0.5rem; flex-wrap:wrap;">
+                <label><input type="radio" name="rating" value="5" required> Excellent</label>
+                <label><input type="radio" name="rating" value="4"> Good</label>
+                <label><input type="radio" name="rating" value="3"> Average</label>
+                <label><input type="radio" name="rating" value="2"> Poor</label>
+              </div>
+            </div>
+
+            <div style="margin-bottom:2rem;">
+              <label for="message">Your Comments *</label>
+              <textarea id="message" rows="6" required placeholder="Tell us about your experience..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; padding:16px; font-size:1.1rem;">
+              Submit Feedback <i class="fas fa-paper-plane"></i>
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <p>&copy; 2026 Elite Cars & Bikes. All Rights Reserved.</p>
+      <p>Broadhurst Industrial, Gaborone, Botswana</p>
+      <p>
+        <a href="tel:+26774503665">+267 74 503 665</a> | 
+        <a href="mailto:elitecarsandbikes@gmail.com">elitecarsandbikes@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+  // Mobile Menu Toggle
+  const mobileMenu = document.getElementById('mobileMenu');
+  const navLinks = document.getElementById('navLinks');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    mobileMenu.classList.toggle('fa-bars');
+    mobileMenu.classList.toggle('fa-times');
+  });
+
+  // Highlight Current Page
+  function setActiveLink() {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navItems = document.querySelectorAll('.nav-link');
+
+    navItems.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // Run when page loads
+  window.addEventListener('load', setActiveLink);
+</script>
+</body>
+</html>

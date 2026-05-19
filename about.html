@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Elite Cars & Bikes Botswana</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <i class="fas fa-car"></i>
+      <div class="logo-text">
+        <h1>ELITE</h1>
+        <p>CARS & BIKES</p>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="shop.html" class="nav-link">Shop</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="blog.html" class="nav-link">Blog</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+      <i class="fas fa-bars mobile-menu" id="mobileMenu"></i>
+    </div>
+  </div>
+</nav>
+
+  <section class="section" style="background:#18181b; padding-top:140px; text-align:center;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 2rem;">
+      <h1 class="section-title">About Elite Cars & Bikes</h1>
+      <p style="font-size:1.3rem; max-width:700px; margin:0 auto; color:var(--light-gray);">
+        Iconic importer and dealer of quality luxurious new and pre-owned cars and motorcycles in Botswana.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div style="max-width:1280px; margin:0 auto; padding:0 2rem;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
+        <div>
+          <h2 style="font-size:2.6rem; margin-bottom:1.5rem;">Our Story</h2>
+          <div class="gold-divider"></div>
+          <p style="font-size:1.15rem; color:var(--light-gray); margin-bottom:1.5rem;">
+            Founded with a deep passion for automotive excellence, Elite Cars & Bikes has become one of the most trusted luxury vehicle dealers in Botswana.
+          </p>
+          <p style="font-size:1.15rem; color:var(--light-gray);">
+            We carefully source premium vehicles from Europe and deliver them with full transparency and professional service.
+          </p>
+        </div>
+        <div>
+          <img src="images/Acoustic gypsum ceilings in Mercedes-Benz showroom.jfif" 
+               alt="Elite Showroom" style="width:100%; border-radius:24px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <p>&copy; 2026 Elite Cars & Bikes. All Rights Reserved.</p>
+      <p>Broadhurst Industrial, Gaborone, Botswana</p>
+      <p>
+        <a href="tel:+26774503665">+267 74 503 665</a> | 
+        <a href="mailto:elitecarsandbikes@gmail.com">elitecarsandbikes@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+ <script>
+  // Mobile Menu Toggle
+  const mobileMenu = document.getElementById('mobileMenu');
+  const navLinks = document.getElementById('navLinks');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    mobileMenu.classList.toggle('fa-bars');
+    mobileMenu.classList.toggle('fa-times');
+  });
+
+  // Highlight Current Page
+  function setActiveLink() {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navItems = document.querySelectorAll('.nav-link');
+
+    navItems.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // Run when page loads
+  window.addEventListener('load', setActiveLink);
+</script>
+</body>
+</html>
