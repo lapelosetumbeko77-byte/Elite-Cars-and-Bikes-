@@ -1,0 +1,287 @@
+/* css/style.css - Elite Cars & Bikes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --red: #c8102e;
+  --red-accent: #e63939;
+  --dark: #0a0a0a;
+  --dark-gray: #1f1f1f;
+  --gray: #a1a1aa;
+  --light-gray: #d1d5db;
+  --off-white: #e5e5e5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--dark);
+  color: var(--off-white);
+  line-height: 1.7;
+  padding-top: 95px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 700;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #27272a;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 85px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+}
+
+.logo i {
+  font-size: 2.4rem;
+  color: var(--red);
+}
+
+.logo-text h1 {
+  font-size: 1.85rem;
+  letter-spacing: -1px;
+}
+
+.logo-text p {
+  font-size: 0.78rem;
+  color: var(--red);
+  margin-top: -4px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.mobile-menu {
+  display: none;
+  font-size: 1.9rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--red-accent);
+  transform: translateY(-2px);
+}
+
+/* General */
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.card {
+  background: var(--dark-gray);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 1px solid #27272a;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(200, 16, 46, 0.2);
+}
+
+.card img, .card video {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.75rem;
+}
+
+.footer {
+  background: #000;
+  padding: 60px 0 30px;
+  text-align: center;
+  color: var(--gray);
+}
+
+.footer a {
+  color: var(--light-gray);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--red);
+}
+
+
+@media (max-width: 992px) {
+  .nav-links {
+    position: fixed;
+    top: 85px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 85px);
+    background: #0a0a0a;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    gap: 2.5rem;
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-text h1 {
+    font-size: 1.6rem;
+  }
+  body {
+    padding-top: 80px;
+  }
+}
+
+.nav-links a.active {
+  color: var(--red);
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--red);
+  border-radius: 3px;
+}
+
+.hero {
+  height: 100vh;
+  min-height: 650px;
+  background-image: 
+    linear-gradient(rgba(10, 10, 10, 0.65), rgba(10, 10, 10, 0.75)),
+    url('../images/hero.jpeg');   
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 4.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.hero-subtitle {
+  font-size: 1.55rem;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  color: #e5e5e5;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3.4rem;
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
